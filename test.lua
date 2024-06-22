@@ -55,7 +55,7 @@ execute.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
 execute.Parent = container
 
 execute.MouseButton1Click:Connect(function()
-    local func, err = loadstring(terminal.text)
+    local func, err = loadstring(terminal.Text)
     if func then
         func()
     else
