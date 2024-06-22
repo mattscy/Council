@@ -1,5 +1,6 @@
 local PLR = game:GetService("Players")
 
+print("script", script:GetFullName())
 local tool = script.Parent
 tool.RequiresHandle = false
 
