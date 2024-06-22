@@ -25,6 +25,8 @@ terminal.TextColor3 = Color3.fromRGB(255, 255, 255)
 terminal.BackgroundTransparency = 1
 terminal.Size = UDim2.fromScale(1, 1)
 terminal.AutomaticSize = Enum.AutomaticSize.XY
+terminal.TextXAlignment = Enum.TextXAlignment.Left
+terminal.TextYAlignment = Enum.TextYAlignment.Top
 
 terminal.Parent = frame
 frame.Parent = sg
