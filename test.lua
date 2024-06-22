@@ -10,9 +10,9 @@ container.Size = UDim2.new(1, 100, 1, -50)
 container.AnchorPoint = Vector2.new(0.5, 0.5)
 container.Position = UDim2.fromScale(0.5, 0.5)
 container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+container.SizeConstraint = Enum.SizeConstraint.RelativeYY
 
 local scroll = Instance.new("ScrollingFrame")
-scroll.SizeConstraint = Enum.SizeConstraint.RelativeYY
 scroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
 scroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
