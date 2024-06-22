@@ -5,14 +5,18 @@ local tool = script.Parent
 local sg = Instance.new("ScreenGui")
 sg.Archivable = false
 
-local frame = Instance.new("ScrollingFrame")
-frame.SizeConstraint = Enum.SizeConstraint.RelativeYY
-frame.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
-frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-frame.Size = UDim2.fromScale(1, 1)
-frame.AnchorPoint = Vector2.new(0.5, 0.5)
-frame.Position = UDim2.fromScale(0.5, 0.5)
-frame.AutomaticCanvasSize = Enum.AutomaticSize.XY
+local container = Instance.new("Frame")
+container.Size = UDim2.new(1, 50, 1, -50)
+container.AnchorPoint = Vector2.new(0.5, 0.5)
+container.Position = UDim2.fromScale(0.5, 0.5)
+container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+
+local scroll = Instance.new("ScrollingFrame")
+scroll.SizeConstraint = Enum.SizeConstraint.RelativeYY
+scroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
+scroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
+scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
+scroll.Size = UDim2.fromScale(1, 1)
 
 local terminal = Instance.new("TextBox")
 terminal.Font = Enum.Font.Code
@@ -28,8 +32,9 @@ terminal.AutomaticSize = Enum.AutomaticSize.XY
 terminal.TextXAlignment = Enum.TextXAlignment.Left
 terminal.TextYAlignment = Enum.TextYAlignment.Top
 
-terminal.Parent = frame
-frame.Parent = sg
+terminal.Parent = scroll
+scroll.Parent = container
+container.Parent = sg
 
 tool.Equipped:Connect(function()
     local player = PLR:GetPlayerFromCharacter(tool.Parent)
@@ -38,4 +43,22 @@ end)
 
 tool.Unequipped:Connect(function()
     sg.Parent = nil
+end)
+
+local execute = Instance.new("TextButton")
+execute.Size = UDim2.fromOffset(50, 20)
+execute.TextScaled = true
+execute.Text = "Execute"
+execute.AnchorPoint = Vector2.new(1, 0)
+execute.Position = UDim2.fromScale(1, 0)
+execute.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+execute.Parent = container
+
+execute.MouseButton1Click:Connect(function()
+    local func, err = loadstring(terminal.text)
+    if func then
+        func()
+    else
+        error("Error compiling script: " .. err)
+    end
 end)
