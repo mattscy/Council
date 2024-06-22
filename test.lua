@@ -1,3 +1,5 @@
+print("test")
+
 local PLR = game:GetService("Players")
 
 print("script", script:GetFullName())
