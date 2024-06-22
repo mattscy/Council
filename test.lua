@@ -6,7 +6,7 @@ local sg = Instance.new("ScreenGui")
 sg.Archivable = false
 
 local container = Instance.new("Frame")
-container.Size = UDim2.new(1, 50, 1, -50)
+container.Size = UDim2.new(1, 100, 1, -50)
 container.AnchorPoint = Vector2.new(0.5, 0.5)
 container.Position = UDim2.fromScale(0.5, 0.5)
 container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -16,7 +16,7 @@ scroll.SizeConstraint = Enum.SizeConstraint.RelativeYY
 scroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
 scroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
-scroll.Size = UDim2.fromScale(1, 1)
+scroll.Size = UDim2.new(1, -100, 1, 0)
 
 local terminal = Instance.new("TextBox")
 terminal.Font = Enum.Font.Code
@@ -46,7 +46,7 @@ tool.Unequipped:Connect(function()
 end)
 
 local execute = Instance.new("TextButton")
-execute.Size = UDim2.fromOffset(50, 20)
+execute.Size = UDim2.fromOffset(100, 20)
 execute.TextScaled = true
 execute.Text = "Execute"
 execute.AnchorPoint = Vector2.new(1, 0)
