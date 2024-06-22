@@ -12,6 +12,7 @@ frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
 frame.Size = UDim2.fromScale(1, 1)
 frame.AnchorPoint = Vector2.new(0.5, 0.5)
 frame.Position = UDim2.fromScale(0.5, 0.5)
+frame.AutomaticCanvasSize = Enum.AutomaticSize.XY
 
 local terminal = Instance.new("TextBox")
 terminal.Font = Enum.Font.Code
