@@ -1,7 +1,6 @@
 local PLR = game:GetService("Players")
 
 local tool = script.Parent
-tool.RequiresHandle = false
 
 local sg = Instance.new("ScreenGui")
 sg.Archivable = false
