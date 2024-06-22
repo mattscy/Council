@@ -18,10 +18,12 @@ local terminal = Instance.new("TextBox")
 terminal.Font = Enum.Font.Code
 terminal.TextSize = 20
 terminal.ClearTextOnFocus = false
+terminal.MultiLine = true
 terminal.Text = 'print("Hello Elemento!")'
 terminal.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
 terminal.TextColor3 = Color3.fromRGB(255, 255, 255)
 terminal.BackgroundTransparency = 1
+terminal.Size = UDim2.fromScale(1, 1)
 terminal.AutomaticSize = Enum.AutomaticSize.XY
 
 terminal.Parent = frame
