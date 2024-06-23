@@ -5,6 +5,7 @@ local tool = script.Parent
 
 local sg = Instance.new("ScreenGui")
 sg.Archivable = false
+sg.Enabled = false
 
 local container = Instance.new("Frame")
 container.Size = UDim2.new(1, 100, 1, -100)
@@ -54,17 +55,15 @@ scroll.Parent = container
 output.Parent = container
 container.Parent = sg
 
+local player = elemento:GetMyPlayer()
+sg.Parent = player.PlayerGui
+
 tool.Equipped:Connect(function()
-    local player = PLR:GetPlayerFromCharacter(tool.Parent)
-    sg.Parent = player.PlayerGui
-    local text = terminal.Text
-    terminal.Text = ""
-    terminal.Text = text
+    sg.Enabled = true
 end)
 
 tool.Unequipped:Connect(function()
-    sg.Parent = nil
-    task.wait(1)
+    sg.Enabled = false
 end)
 
 local execute = Instance.new("TextButton")
