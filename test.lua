@@ -13,6 +13,7 @@ container.Position = UDim2.fromScale(0.5, 0)
 container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 container.BorderColor3 = Color3.fromRGB(255, 255, 255)
 container.SizeConstraint = Enum.SizeConstraint.RelativeYY
+container.ClipsDescendants = false
 
 local scroll = Instance.new("ScrollingFrame")
 scroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
