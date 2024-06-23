@@ -11,6 +11,7 @@ container.Size = UDim2.new(1, 100, 1, -100)
 container.AnchorPoint = Vector2.new(0.5, 0)
 container.Position = UDim2.fromScale(0.5, 0)
 container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+output.BorderColor3 = Color3.fromRGB(255, 255, 255)
 container.SizeConstraint = Enum.SizeConstraint.RelativeYY
 
 local scroll = Instance.new("ScrollingFrame")
@@ -44,7 +45,7 @@ output.Position = UDim2.new(0, 0, 0.8, 0)
 output.TextXAlignment = Enum.TextXAlignment.Left
 output.TextYAlignment = Enum.TextYAlignment.Top
 output.Text = ""
-output.BorderSizePixel = 0
+output.BorderColor3 = Color3.fromRGB(255, 255, 255)
 output.Parent = container
 
 terminal.Parent = scroll
