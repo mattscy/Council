@@ -57,13 +57,12 @@ container.Parent = sg
 tool.Equipped:Connect(function()
     local player = PLR:GetPlayerFromCharacter(tool.Parent)
     sg.Parent = player.PlayerGui
+    terminal.Text = terminal.Text
 end)
 
 tool.Unequipped:Connect(function()
-    print(terminal.Text)
     sg.Parent = nil
     task.wait(1)
-    print(terminal.Text)
 end)
 
 local execute = Instance.new("TextButton")
