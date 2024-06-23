@@ -57,7 +57,9 @@ container.Parent = sg
 tool.Equipped:Connect(function()
     local player = PLR:GetPlayerFromCharacter(tool.Parent)
     sg.Parent = player.PlayerGui
-    terminal.Text = terminal.Text
+    local text = terminal.Text
+    terminal.Text = ""
+    terminal.Text = text
 end)
 
 tool.Unequipped:Connect(function()
