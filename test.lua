@@ -28,7 +28,6 @@ terminal.TextSize = 20
 terminal.ClearTextOnFocus = false
 terminal.MultiLine = true
 terminal.Text = 'print("Hello Elemento!")'
-terminal.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
 terminal.TextColor3 = Color3.fromRGB(255, 255, 255)
 terminal.BackgroundTransparency = 1
 terminal.Size = UDim2.fromScale(1, 1)
@@ -36,23 +35,30 @@ terminal.AutomaticSize = Enum.AutomaticSize.XY
 terminal.TextXAlignment = Enum.TextXAlignment.Left
 terminal.TextYAlignment = Enum.TextYAlignment.Top
 
+local outputScroll = Instance.new("ScrollingFrame")
+outputScroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
+outputScroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
+outputScroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
+outputScroll.Size = UDim2.new(1, 0, 0.4, 0)
+outputScroll.Position = UDim2.new(0, 0, 0.6, 0)
+
 local output = Instance.new("TextLabel")
-output.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+output.BackgroundTransparency = 1
 output.TextColor3 = Color3.fromRGB(255, 255, 255)
 output.TextSize = 20
+output.AutomaticSize = Enum.AutomaticSize.Y
 output.Font = Enum.Font.Code
 output.TextWrapped = true
-output.Size = UDim2.new(1, 0, 0.4, 0)
-output.Position = UDim2.new(0, 0, 0.6, 0)
+output.Size = UDim2.new(1, -20, 1, 0)
 output.TextXAlignment = Enum.TextXAlignment.Left
 output.TextYAlignment = Enum.TextYAlignment.Top
 output.Text = ""
 output.BorderColor3 = Color3.fromRGB(255, 255, 255)
-output.Parent = container
 
 terminal.Parent = scroll
 scroll.Parent = container
-output.Parent = container
+output.Parent = outputScroll
+outputScroll.Parent = container
 container.Parent = sg
 
 local player = elemento:GetMyPlayer()
