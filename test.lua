@@ -21,6 +21,7 @@ scroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
 scroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
 scroll.Size = UDim2.new(1, -100, 0.6, 0)
+scroll.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 local terminal = Instance.new("TextBox")
 terminal.Font = Enum.Font.Code
