@@ -7,7 +7,7 @@ local sg = Instance.new("ScreenGui")
 sg.Archivable = false
 
 local container = Instance.new("Frame")
-container.Size = UDim2.new(1, 100, 1, -75)
+container.Size = UDim2.new(1, 100, 1, -100)
 container.AnchorPoint = Vector2.new(0.5, 0)
 container.Position = UDim2.fromScale(0.5, 0)
 container.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
