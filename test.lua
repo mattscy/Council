@@ -60,7 +60,10 @@ tool.Equipped:Connect(function()
 end)
 
 tool.Unequipped:Connect(function()
+    print(terminal.Text)
     sg.Parent = nil
+    task.wait(1)
+    print(terminal.Text)
 end)
 
 local execute = Instance.new("TextButton")
