@@ -37,7 +37,7 @@ terminal.TextXAlignment = Enum.TextXAlignment.Left
 terminal.TextYAlignment = Enum.TextYAlignment.Top
 
 local outputScroll = Instance.new("ScrollingFrame")
-outputScroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
+outputScroll.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 outputScroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
 outputScroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
 outputScroll.Size = UDim2.new(1, 0, 0.4, 0)
@@ -89,6 +89,16 @@ execute.MouseButton1Click:Connect(function()
     else
         error("Error compiling script: " .. err)
     end
+end)
+
+local clearOutput = execute:Clone()
+clearOutput.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+clearOutput.Position = UDim2.new(1, 0, 0, 20)
+clearOutput.Text = "Clear Output"
+clearOutput.Parent = container
+
+clearOutput.MouseButton1Click:Connect(function()
+    LS:ClearOutput()
 end)
 
 LS.MessageOut:Connect(function(message, messageType)
