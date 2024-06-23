@@ -44,6 +44,7 @@ output.Position = UDim2.new(0, 0, 0.8, 0)
 output.TextXAlignment = Enum.TextXAlignment.Left
 output.TextYAlignment = Enum.TextYAlignment.Top
 output.Text = ""
+output.BorderSizePixel = 0
 output.Parent = container
 
 terminal.Parent = scroll
