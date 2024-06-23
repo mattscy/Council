@@ -1,4 +1,5 @@
 local PLR = game:GetService("Players")
+local LS = game:GetService("LogService")
 
 local tool = script.Parent
 
@@ -16,7 +17,7 @@ local scroll = Instance.new("ScrollingFrame")
 scroll.BackgroundColor3 = Color3.fromRGB(13, 17, 23)
 scroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
 scroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
-scroll.Size = UDim2.new(1, -100, 1, 0)
+scroll.Size = UDim2.new(1, -100, 0.8, 0)
 
 local terminal = Instance.new("TextBox")
 terminal.Font = Enum.Font.Code
@@ -32,8 +33,19 @@ terminal.AutomaticSize = Enum.AutomaticSize.XY
 terminal.TextXAlignment = Enum.TextXAlignment.Left
 terminal.TextYAlignment = Enum.TextYAlignment.Top
 
+local output = Instance.new("TextLabel")
+output.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+output.TextColor3 = Color3.fromRGB(255, 255, 255)
+output.TextSize = 20
+output.Font = Enum.Font.Code
+output.TextWrapped = true
+output.Size = UDim2.new(1, 0, 0.2, 0)
+output.Position = UDim2.new(0, 0, 0.8, 0)
+output.Parent = container
+
 terminal.Parent = scroll
 scroll.Parent = container
+output.Parent = container
 container.Parent = sg
 
 tool.Equipped:Connect(function()
@@ -61,4 +73,8 @@ execute.MouseButton1Click:Connect(function()
     else
         error("Error compiling script: " .. err)
     end
+end)
+
+LS.MessageOut:Connect(function(message, messageType)
+    output.Text = message .. "\n" .. output.Text
 end)
