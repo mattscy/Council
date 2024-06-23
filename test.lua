@@ -99,6 +99,7 @@ clearOutput.Parent = container
 
 clearOutput.MouseButton1Click:Connect(function()
     LS:ClearOutput()
+    output.Text = ""
 end)
 
 LS.MessageOut:Connect(function(message, messageType)
