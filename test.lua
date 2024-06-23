@@ -93,7 +93,7 @@ end)
 
 local clearOutput = execute:Clone()
 clearOutput.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
-clearOutput.Position = UDim2.new(1, 0, 0, 20)
+clearOutput.Position = UDim2.new(1, 0, 0, 30)
 clearOutput.Text = "Clear Output"
 clearOutput.Parent = container
 
