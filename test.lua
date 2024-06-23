@@ -41,14 +41,14 @@ outputScroll.BorderColor3 = Color3.fromRGB(255, 255, 255)
 outputScroll.AutomaticCanvasSize = Enum.AutomaticSize.XY
 outputScroll.Size = UDim2.new(1, 0, 0.4, 0)
 outputScroll.Position = UDim2.new(0, 0, 0.6, 0)
+outputScroll.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 local output = Instance.new("TextLabel")
 output.BackgroundTransparency = 1
 output.TextColor3 = Color3.fromRGB(255, 255, 255)
 output.TextSize = 20
-output.AutomaticSize = Enum.AutomaticSize.Y
+output.AutomaticSize = Enum.AutomaticSize.XY
 output.Font = Enum.Font.Code
-output.TextWrapped = true
 output.Size = UDim2.new(1, -20, 1, 0)
 output.TextXAlignment = Enum.TextXAlignment.Left
 output.TextYAlignment = Enum.TextYAlignment.Top
